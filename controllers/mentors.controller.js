@@ -1,7 +1,7 @@
-const UserRouter = require("express").Router();
-const UserModel = require("../models/users.model");
+const MentorRouter = require("express").Router();
+const UserModel = require("../models/mentors.model");
 var mongoose = require("mongoose");
-UserRouter.get('/',(req,res,next)=>
+MentorRouter.get('/',(req,res,next)=>
 {
   UserModel.find().then((cursor)=>
   {
@@ -27,7 +27,7 @@ UserRouter.get('/',(req,res,next)=>
     })
   });
 })
-UserRouter.post("/create", (req, res, next) => {
+MentorRouter.post("/create", (req, res, next) => {
     const data = req.body;
     console.log(data);
   
@@ -53,6 +53,4 @@ UserRouter.post("/create", (req, res, next) => {
       });
   });
   
-module.exports = UserRouter;
-
-
+module.exports = MentorRouter;
